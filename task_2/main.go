@@ -10,17 +10,19 @@ import (
 */
 func main() {
 	arr := [5]int{2, 4, 6, 8, 10}
+
 	var wg sync.WaitGroup
-	wg.Add(5)
+
 	for i := 0; i < 5; i++ {
+		wg.Add(1)
 		go square(arr[i], &wg)
 		wg.Done()
 	}
-	wg.Wait()
+	//wg.Wait()
 
 }
 
 func square(val int, wg *sync.WaitGroup) {
 	fmt.Println(val * val)
-	wg.Done()
+	wg.Wait()
 }
