@@ -25,7 +25,7 @@ func numSpecial(mat [][]int) int {
 			}
 		}
 	}
-	unique := map[int]bool{}
+	//unique := map[int]bool{}
 	// idx = all i where contains 1
 	// for all idx if we have dublicate - ignore^ else
 	return counter
