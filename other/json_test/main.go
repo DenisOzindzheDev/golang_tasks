@@ -16,6 +16,5 @@ func main() {
 		Mama: "mama",
 	}
 	test, _ := json.Marshal(c) //serialize
-	json.NewDecoder()
-	fmt.Printf("aa %v", json.Unmarshal(test, c))
+	fmt.Printf("aa %v", json.Unmarshal(test, &c))
 }
