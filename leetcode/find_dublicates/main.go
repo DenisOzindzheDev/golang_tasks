@@ -23,3 +23,18 @@ func findDuplicates(nums []int) []int {
 
 	return duplicates
 }
+
+/*
+func findDuplicates(nums []int) []int {
+    output := []int{}
+    for _, num := range nums {
+        idx := abs(num)
+        if nums[idx-1] < 0 {
+            output = append(output, idx)
+        } else {
+            nums[idx-1] *= -1
+        }
+    }
+    return output
+}
+*/
