@@ -4,18 +4,17 @@ func main() {
 
 }
 func plusOne(digits []int) []int {
-	sum := 0
-	res := make([]int, 0)
-	for i := 0; i < len(digits); i++ {
-		sum += digits[i]*len(digits) - i
-	}
-	sum++
+	n := len(digits)
+	for i := n - 1; i >= 0; i-- {
+		if digits[i] < 9 {
+			digits[i]++
+			return digits
+		}
+		digits[i] = 0
 
-	for i := len(digits) - 1; i >= 0; i-- {
-		res = append([]int{sum % 10}, res...)
-		sum /= 10
 	}
-	return res
+	digits = append([]int{1}, digits...)
+	return digits
 }
 
 /*
@@ -29,7 +28,7 @@ func plusOne(digits []int) []int {
 20  2 * 10	  i=1
 3   3 * 1     i=2
 
-len 3 = 10 * 10 (len - 1 times)  
+len 3 = 10 * 10 (len - 1 times)
 len 2 = 10
 len 1 = 1
 -----------
